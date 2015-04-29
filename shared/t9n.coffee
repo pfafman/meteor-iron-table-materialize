@@ -7,6 +7,6 @@ en =
   'Show Record Object': 'Show Record Object'
   'Edit Record': 'Edit Record'
   'Delete Record': 'Delete Record'
-
+  'Sort On': 'Sort On'
 
 T9n.map "en", en
