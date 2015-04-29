@@ -132,7 +132,7 @@ class @IronTableController extends RouteController
 
   onStop: ->
     $('[rel="tooltip"]')?.tooltip('destroy')
-    #$('[rel="popover"]')?.popover('destroy')
+    $('[rel="popover"]')?.popover('destroy')
     @unsubscribe()
     @reset()
 

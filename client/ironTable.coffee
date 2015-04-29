@@ -301,6 +301,7 @@ Template.ironTableRecords.events
     Session.set("ironTableActiveRecordId", null)
 
 
+
 Template.ironTableRow.onRendered ->
   $('[rel="tooltip"]')?.tooltip()
   #$('[rel="popover"]')?.popover()
@@ -308,7 +309,7 @@ Template.ironTableRow.onRendered ->
   $('.modal-trigger').leanModal()
 
 
-Template.ironTableRow.destroyed = ->
+Template.ironTableRow.onDestroyed ->
   $('[rel="tooltip"]')?.tooltip('destroy')
   #$('[rel="popover"]')?.popover('destroy')
   $('[rel="tooltip"]')?.tooltip()
