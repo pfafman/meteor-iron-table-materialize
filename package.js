@@ -1,6 +1,6 @@
 
 Package.describe({
-  //name: 'pfafman:meteor-iron-table-materialize',
+  name: 'pfafman:iron-table-materialize',
   summary: "Paging Table for IronRouter and Meteor with Materialize styling",
   version: "0.3.0_2",
   git: "https://github.com/pfafman/meteor-iron-table-materialize.git",
