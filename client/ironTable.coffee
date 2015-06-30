@@ -215,7 +215,7 @@ Template.ironTableHeading.events
 
 
 Template.ironTableFilter.onRendered ->
-  $('select').material_select()
+  #$('select').material_select()
 
 
 Template.ironTableFilter.helpers
@@ -303,16 +303,16 @@ Template.ironTableRecords.events
 
 
 Template.ironTableRow.onRendered ->
-  $('[rel="tooltip"]')?.tooltip()
+  $('[rel="tooltip"]')?.tooltip?()
   #$('[rel="popover"]')?.popover()
-  $('select').material_select()
-  $('.modal-trigger').leanModal()
+  $('select')?.material_select?()
+  $('.modal-trigger')?.leanModal?()
 
 
 Template.ironTableRow.onDestroyed ->
-  $('[rel="tooltip"]')?.tooltip('destroy')
+  $('[rel="tooltip"]')?.tooltip?('destroy')
   #$('[rel="popover"]')?.popover('destroy')
-  $('[rel="tooltip"]')?.tooltip()
+  $('[rel="tooltip"]')?.tooltip?()
   #$('[rel="popover"]')?.popover()
 
 
