@@ -253,7 +253,7 @@
     {{#if extraControls}}{{> extraControls }}{{/if}}
 
     {{#if editOk}}
-        <a href="{{pathFor route=editRoute}}" class="btn-flat waves-effect iron-table-edit-record tooltipped"
+        <a href="{{#if editRoute}}{{pathFor editRoute}}{{/if}}" class="btn-flat waves-effect iron-table-edit-record tooltipped"
           data-tooltip="{{irtblT9nit 'Edit Record'}}" rel='tooltip'>
           <i class="mdi-editor-mode-edit"></i>
         </a>

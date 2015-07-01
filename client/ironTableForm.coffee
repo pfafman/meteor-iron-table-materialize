@@ -8,9 +8,9 @@ capitalize = (string) ->
 
 Template.ironTableFormItem.onRendered ->
   #console.log("ironTableFormItem rendered")
-  $('[rel="tooltip"]').tooltip()
-  $('select').material_select()
-  $('.datepicker')?.pickadate
+  @$('[rel="tooltip"]').tooltip()
+  @$('select').material_select()
+  @$('.datepicker')?.pickadate
     selectMonths: false
     selectYears: false
   #$('.timepicker')?.pickatime()
