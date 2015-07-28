@@ -1,5 +1,5 @@
 
-DEBUG = true
+DEBUG = false
 
 getCurrentIronTableController = ->
   if Router.current?()?.classID is "IronTableController"

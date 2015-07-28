@@ -4,7 +4,7 @@ Template.ironTableSelect.created = ->
 
 
 Template.ironTableSelectSelect.rendered = ->
-  $('select').material_select()
+  @$('select').material_select()
 
 
 Template.ironTableSelect.helpers
