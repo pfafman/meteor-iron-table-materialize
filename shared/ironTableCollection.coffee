@@ -47,6 +47,7 @@ class @IronTableCollection extends Mongo.Collection
           @find?(select)?.count?()
       
       #if true #@doDownloadLink
+      console.log("downloadRecords", "ironTable_" + @_name + "_getCSV") if DEBUG
       meths["ironTable_" + @_name + "_getCSV"] = (select = {}, fields = {}) =>
         csv = []
         fieldKeys = _.keys(fields)

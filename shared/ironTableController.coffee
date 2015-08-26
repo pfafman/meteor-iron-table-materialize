@@ -69,6 +69,7 @@ class @IronTableController extends RouteController
         dataKey = col.dataKey or col.sortKey or key
         fields[dataKey] = 1
 
+    console.log("downloadRecords", "ironTable_" + @_collectionName() + "_getCSV") if DEBUG
     Meteor.call "ironTable_" + @_collectionName() + "_getCSV", @_select(), fields, callback
 
 
