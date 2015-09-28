@@ -37,3 +37,7 @@ Template.ironTableFormItem.helpers
 
   showHelpText: ->
     @helpText? and not @static?
+
+
+Template.ironTableFormItem.onDestroyed ->
+  @$('[rel="tooltip"]').tooltip('remove')

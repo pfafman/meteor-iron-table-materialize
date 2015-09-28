@@ -52,14 +52,14 @@ sizeCalc = ->
 
 
 Template.ironTable.onRendered ->
-  $('[rel="tooltip"]')?.tooltip('destroy')
-  $('[rel="tooltip"]')?.tooltip()
+  @$('[rel="tooltip"]')?.tooltip('remove')
+  @$('[rel="tooltip"]')?.tooltip()
   
   $( window ).on('resize', sizeCalc)
 
 
 Template.ironTable.onDestroyed ->
-  $('[rel="tooltip"]')?.tooltip('destroy')
+  @$('[rel="tooltip"]')?.tooltip('remove')
   $( window ).off('resize')
 
 
@@ -109,7 +109,8 @@ Template.ironTable.events
   "click .iron-table-delete-record": (e, tmpl) ->
     e.preventDefault()
     #e.stopImmediatePropagation()
-    $('.iron-table-delete-record').tooltip('hide')
+    tmpl.$('.iron-table-delete-record').tooltip('remove')
+    tmpl.$('.iron-table-delete-record').tooltip()
 
     if not currentController = getCurrentIronTableController()
       Materialize.toast(t9nIt "Internal Error: Could not get controller", 3000, 'red')
@@ -128,7 +129,8 @@ Template.ironTable.events
     if not currentController?.getEditRoute(@_id)?
       e.preventDefault()
       #e.stopImmediatePropagation()
-      $('.iron-table-edit-record').tooltip('hide')
+      tmpl.$('.iron-table-edit-record').tooltip('remove')
+      tmpl.$('.iron-table-edit-record').tooltip()
 
       if not currentController
         Materialize.toast(t9nIt "Internal Error: Could not get controller", 3000, 'red')
@@ -305,16 +307,14 @@ Template.ironTableRecords.events
 
 Template.ironTableRow.onRendered ->
   @$('[rel="tooltip"]')?.tooltip?()
-  #$('[rel="popover"]')?.popover()
   @$('select')?.material_select?()
   @$('.modal-trigger')?.leanModal?()
 
 
 Template.ironTableRow.onDestroyed ->
-  $('[rel="tooltip"]')?.tooltip?('destroy')
-  #$('[rel="popover"]')?.popover('destroy')
+  $('[rel="tooltip"]')?.tooltip?('remove')
   $('[rel="tooltip"]')?.tooltip?()
-  #$('[rel="popover"]')?.popover()
+  
 
 
 Template.ironTableRow.helpers
@@ -397,6 +397,10 @@ Template.ironTableHeaders.helpers
     getCurrentIronTableController()?.headers()
 
 
+Template.ironTableHeader.onRendered ->
+  @$('[rel="tooltip"]').tooltip()
+
+
 Template.ironTableHeader.events
   "click .table-col-head": (e, tmpl) ->
     e.preventDefault()
@@ -413,7 +417,7 @@ Template.ironTableRecords.helpers
 
 
 Template.ironTableRow.onRendered ->
-  $('[rel="tooltip"]').tooltip()
+  @$('[rel="tooltip"]').tooltip()
   #sizeCalc()
 
 
