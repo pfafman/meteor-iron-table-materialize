@@ -85,7 +85,9 @@
     {{#if tableTitle}}
       <h3 class="truncate col l4 m4 s12 {{#if showTitleLargeOnly}}hide-on-med-and-down{{/if}}">
         {{#if showBackButton}}
-          <a class="btn-floating waves-effect waves-light back-btn" onclick="window.history.back()"><i class="mdi-navigation-chevron-left"></i></a>
+          <a class="btn-floating waves-effect waves-light back-btn" onclick="window.history.back()">
+            <i class="material-icons">&#xE5CB;</i>
+          </a>
         {{/if}}
 
         {{{tableTitle}}}
@@ -102,18 +104,20 @@
 
       {{#if doDownloadLink}}
         <button id="download-link" class="btn {{downloadButtonColor}} waves-effect waves-light">
-          Download<i class="mdi-file-cloud-download right "></i> 
+          Download<i class="material-icons right">&#xE2C0;</i>
         </button>
       {{/if}}
 
       {{#if newRecordRoute}}
           <a class="btn {{newButtonColor}} waves-effect waves-light" href="{{pathFor newRecordRoute}}">
-            {{irtblT9nit newRecordTitle}}<i class="mdi-file-cloud-download right"></i>
+            {{irtblT9nit newRecordTitle}}
+            <i class="material-icons right">&#xE2C0;</i>
           </a>
       {{else}}
         {{#if showNewButton}}
           <button id="iron-table-new-record" class="btn {{newButtonColor}} waves-effect waves-light">
-            {{irtblT9nit newRecordTitle}}<i class="mdi-content-add-circle right"></i>
+            {{irtblT9nit newRecordTitle}}
+            <i class="material-icons right">&#xE147;</i>
           </button>
         {{/if}}
       {{/if}}
@@ -181,10 +185,10 @@
 
       <div class="col s4 iron-table-pager right-align valign">
         <button class="btn-flat {{previousPathClass}}" id="previous">
-          <i class="mdi-navigation-chevron-left"></i>
+          <i class="material-icons">&#xE5CB;</i>
         </button>
         <button class="btn-flat {{nextPathClass}}" id="next">
-          <i class="mdi-navigation-chevron-right"></i>
+          <i class="material-icons">&#xE5CC;</i>
         </button>
       </div>
     {{else}}
@@ -208,7 +212,11 @@
             rel='tooltip'>
             {{capitalize colName}}
             {{#if sort}}
-                <i class="mdi-navigation-arrow-drop-{{#if desc}}down{{else}}up{{/if}}"></i>
+              {{#if desc}}
+                <i class="material-icons">&#xE5C5;</i>
+              {{else}}
+                <i class="material-icons">&#xE316;</i>
+              {{/if}}
             {{/if}}
         </button>
         {{/if}}
@@ -247,7 +255,7 @@
         data-tooltip="{{irtblT9nit 'Show Record Object'}}"
         data-position="left"
         rel='tooltip'
-      ><i class="mdi-action-description"></i></a>
+      ><i class="material-icons">description</i></a>
     {{/if}}
 
     {{#if extraControls}}{{> extraControls }}{{/if}}
@@ -255,13 +263,13 @@
     {{#if editOk}}
         <a href="{{#if editRoute}}{{pathFor editRoute}}{{/if}}" class="btn-flat waves-effect iron-table-edit-record tooltipped"
           data-tooltip="{{irtblT9nit 'Edit Record'}}" rel='tooltip'>
-          <i class="mdi-editor-mode-edit"></i>
+          <i class="material-icons">edit</i>
         </a>
     {{/if}}
 
     {{#if deleteOk}}
         <a class="btn-flat waves-effect iron-table-delete-record" data-tooltip="{{irtblT9nit 'Delete Record'}}" rel='tooltip'>
-            <i class="mdi-action-delete"></i>
+          <i class="material-icons">delete</i>
         </a>
     {{/if}}
 
