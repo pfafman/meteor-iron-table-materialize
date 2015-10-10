@@ -528,9 +528,10 @@ class @IronTableController extends RouteController
       fixedFooter: true
       
 
-  updateRecord: (yesNo, rec) =>
+  updateRecord: (error, rtn) =>
     @errorMessage = ''
-    if yesNo
+    if rtn?.submit
+      rec = rtn.value
       rec = {} unless rec
       rec._id = @_sess("currentRecordId") unless rec._id?
       if @collection().editOk(rec)
@@ -576,9 +577,10 @@ class @IronTableController extends RouteController
         fullscreen: Meteor.isCordova
         fixedFooter: true
 
-  insertRecord: (yesNo, rec) =>
+  insertRecord: (error, rtn) =>
     @errorMessage = ''
-    if yesNo
+    if rtn?.submit
+      rec = rtn.value
       if @collection().insertOk(rec) and @checkFields(rec, 'insert')
         if @collection().methodOnInsert
           Meteor.call @collection().methodOnInsert, rec, (error) =>

@@ -46,7 +46,7 @@ sizeCalc = ->
       $(outerSelector).height('')
 
   ha = $('.iron-table-container .table-container').height()
-  console.log("sizeCalc #{box}", h, h1, h2, h3, hSet, ha, ht)
+  console.log("sizeCalc #{box}", h, h1, h2, h3, hSet, ha, ht) if DEBUG
   
 
 
@@ -119,8 +119,8 @@ Template.ironTable.events
     MaterializeModal.confirm
       title: t9nIt "Delete Record"
       message: t9nIt("Are you sure you want to delete") + " #{@recordDisplayName}?"
-      callback: (yesNo) =>
-        if yesNo
+      callback: (error, rtn) =>
+        if rtn?.submit
           currentController.removeRecord(@)
     
 
