@@ -16,13 +16,13 @@ Package.on_use(function (api, where) {
     'jquery',
     'session',
     'less@2.5.0',
-    'pfafman:materialize-modal',
+    'meteorstuff:materialize-modal',
     'reactive-var',
     'pfafman:filesaver',
     ]
     , 'client');
 
-  api.imply('pfafman:materialize-modal');
+  api.imply('meteorstuff:materialize-modal');
 
   api.add_files(
     [
