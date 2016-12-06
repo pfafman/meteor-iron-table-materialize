@@ -15,7 +15,7 @@ Package.on_use(function (api, where) {
     'templating',
     'jquery',
     'session',
-    'less',
+    'less@2.5.0',
     'meteorstuff:materialize-modal',
     'reactive-var',
     'pfafman:filesaver',

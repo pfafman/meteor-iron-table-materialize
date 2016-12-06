@@ -308,7 +308,7 @@ Template.ironTableRecords.events
 Template.ironTableRow.onRendered ->
   @$('[rel="tooltip"]')?.tooltip?()
   @$('select')?.material_select?()
-  @$('.modal-trigger')?.leanModal?()
+  @$('.modal')?.modal?()
 
 
 Template.ironTableRow.onDestroyed ->
