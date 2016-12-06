@@ -140,7 +140,7 @@ Template.ironTable.events
 
   "click .show-record": (e, tmpl) ->
     e.preventDefault()
-    $("#modal-json-#{@_id}").openModal()
+    $("#modal-json-#{@_id}").modal('open')
 
 Template.ironTableHeading.helpers
 
