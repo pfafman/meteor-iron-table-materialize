@@ -20,7 +20,7 @@ class @IronTableCollection extends Mongo.Collection
     @_name
 
   constructor: (name, options = null) ->
-    super(name)
+    super #(name)
 
     console.log("IronTableCollection", name, @) if DEBUG
 

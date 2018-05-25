@@ -31,7 +31,7 @@ class @IronTableController extends RouteController
 
 
   constructor: ->
-    super()
+    super #()
     @reset()
 
 
