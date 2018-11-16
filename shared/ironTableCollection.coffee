@@ -20,9 +20,9 @@ class @IronTableCollection extends Mongo.Collection
     @_name
 
   constructor: (name, options = null) ->
-    super(name)
+    super(name, options)
 
-    console.log("IronTableCollection", name, @) if DEBUG
+    console.log("IronTableCollection", name, @) #if DEBUG
 
     if Meteor.isServer
       if @selfPublish

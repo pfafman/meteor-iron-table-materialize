@@ -30,8 +30,13 @@ class @IronTableController extends RouteController
   _subscriptionComplete: false
 
 
-  constructor: ->
-    super()
+  constructor: (arg...) ->
+    console.log("IronTableController args", arg...)
+    super(arg...)
+    console.log("IronTableController this", @)
+    
+    #@arg = arg
+    
     @reset()
 
 
@@ -126,7 +131,7 @@ class @IronTableController extends RouteController
 
 
   onRun: ->
-    #console.log("onRun", @_collectionName())
+    console.log("onRun", @_collectionName())
     @reset()
     @next()
 
@@ -254,6 +259,7 @@ class @IronTableController extends RouteController
 
 
   subscribe: ->
+    console.log("ironTable Sub", @publicationName()) #if DEBUG
     @_subscriptionId = Meteor.subscribe(@publicationName(), @_select(), @sort(), @limit(), @skip())
 
 
