@@ -6,7 +6,7 @@ Package.describe({
   git: "https://github.com/pfafman/meteor-iron-table-materialize.git",
 });
 
-Package.on_use(function (api, where) {
+Package.onUse(function (api, where) {
   //api.versionsFrom("METEOR@1.0.4");
 
   // Client
@@ -24,7 +24,7 @@ Package.on_use(function (api, where) {
 
   api.imply('meteorstuff:materialize-modal');
 
-  api.add_files(
+  api.addFiles(
     [
     'client/ironTable.html',
     'client/ironTable.less',
@@ -38,7 +38,7 @@ Package.on_use(function (api, where) {
     ]
     , 'client');
 
-  api.add_files(
+  api.addFiles(
     [
     'shared/ironTableController.coffee',
     'shared/ironTableCollection.coffee',
@@ -64,6 +64,6 @@ Package.on_use(function (api, where) {
 });
 
 
-Package.on_test(function (api) {
+Package.onTest(function (api) {
 
 });
